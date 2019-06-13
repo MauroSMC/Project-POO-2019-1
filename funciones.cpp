@@ -1,8 +1,3 @@
-#include "funciones.h"
-
-void ImprimeMenu(){
-  cout << "Menú - Juego Senku\n" << "-------------------------------\n" << "1. Estilo Frances\n"<<"2. Estilo Diamante\n"<<"3. Estilo Ingles\n"<<"--------------------------\n"<<"0. Salir del programa\n\n"<<"Seleccionar opcion: ";}
-
 void Imprime1(char M[][8]){
   cout << " ";
   for (int i=1;i<8;i++){
