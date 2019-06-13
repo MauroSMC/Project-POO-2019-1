@@ -3,14 +3,7 @@
 void ImprimeMenu(){
   cout << "Menú - Juego Senku\n" << "-------------------------------\n" << "1. Estilo Frances\n"<<"2. Estilo Diamante\n"<<"3. Estilo Ingles\n"<<"--------------------------\n"<<"0. Salir del programa\n\n"<<"Seleccionar opcion: ";}
 
-char M[8][8]={" "" ""0""0""0"" "" ",
-              " "" ""0""0""0"" "" ",
-              "0""0""0""0""0""0""0",
-              "0""0""0""+""0""0""0",
-              "0""0""0""0""0""0""0",
-              " "" ""0""0""0"" "" ",
-              " "" ""0""0""0"" "" "};
-void Imprime1(){
+void Imprime1(char M[][8]){
   cout << " ";
   for (int i=1;i<8;i++){
     cout << setw(4) << i;
@@ -23,12 +16,12 @@ void Imprime1(){
     }
     cout << endl << endl;
   }    }
-void Cambia(int FO,int CO, int FD, int CD){
+void Cambia(int FO,int CO, int FD, int CD,char M[][8]){
   M[FO-1][CO-1]='+';
   M[FD-1][CD-1]='0';
   M[((FO-1)+(FD-1))/2][((CO-1)+(CD-1))/2]='+';}
 
-bool Condicion1(int FO,int CO){
+bool Condicion1(int FO,int CO,char M[][8]){
   if(M[FO-1][CO-1]=='0'){
     return true;
     if(M[FO-1][CO+1]=='+'){
@@ -37,13 +30,13 @@ bool Condicion1(int FO,int CO){
   }
   else 
     return false;}
-bool Condicion2(int FD,int CD){
+bool Condicion2(int FD,int CD,char M[][8]){
   if(M[FD-1][CD-1]=='+')
     return true;
   else 
     return false;}
 
-bool Perdiste(){
+bool Perdiste(char M[][8]){
   int cont=0;
   for (int i=0;i<8;i++){
     for (int j=0;j<8;j++){
@@ -56,7 +49,7 @@ bool Perdiste(){
   }
   return true;}
 
-bool Ganaste(){
+bool Ganaste(char M[][8]){
   int cont=0;
   for(int i=0;i<8;i++){
     for(int j=0;j<8;j++){
@@ -70,3 +63,6 @@ bool Ganaste(){
   }
   else
     return false;}
+
+
+
