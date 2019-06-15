@@ -19,15 +19,15 @@ int main() {
                 "0""0""0""0""0""0""0",
                 " ""0""0""0""0""0"" ",
                 " "" ""0""0""0"" "" "};
-  char D[10][10]={" "" "" "" ""0"" "" "" "" ",
-                  " "" "" ""0""0""0"" "" "" ",
-                  " "" ""0""0""0""0""0"" "" ",
-                  " ""0""0""0""0""0""0""0"" ",
-                  "0""0""0""0""0""0""0""0""0",
-                  " ""0""0""0""0""0""0""0"" ",
-                  " "" ""0""0""0""0""0"" "" ",
-                  " "" "" ""0""0""0"" "" "" ",
-                  " "" "" "" ""0"" "" "" "" "};
+  
+ char N[8][8]={" ""0""0""0"" "" "" ",
+                " ""0""0""0"" "" "" ",
+                " ""0""0""0"" "" "" ",
+                "0""0""0""0""0""0""0",
+                "0""0""+""0""0""0""0",
+                "0""0""0""0""0""0""0",
+                " ""0""0""0"" "" "" ",
+                " ""0""0""0"" "" "" "};   
   int opcion,fO,cO,fD,cD;
   ImprimeMenu();
   cin >> opcion;
@@ -72,24 +72,21 @@ int main() {
     break;
     case 3:{
       do{
-        Imprime1(M);
+        Imprime1(N);
         do{
           cout << "Ingrese la posicion de origen\n" << "Fila: "; cin >> fO; cout << "Columna: "; cin >> cO;
-          if(Condicion1(fO,cO,A)==false)
+          if(Condicion1(fO,cO,N)==false)
             cout << "Posicion no valida\n";
-        }while(Condicion1(fO,cO,A)==false);
+        }while(Condicion1(fO,cO,N)==false);
         do{
           cout << "Ingrese la posicion de destino\n" << "Fila: ";cin >> fD; cout << "Columna: "; cin >> cD;
-          if(Condicion2(fD,cD,A)==false)
+          if(Condicion2(fD,cD,N)==false)
             cout << "Posicion no valida\n";
-        }while(Condicion2(fD,cD,A)==false);
-        Cambia(fO,cO,fD,cD,A);
-      }while(Perdiste(A)==true || Ganaste(A)==false);
+        }while(Condicion2(fD,cD,N)==false);
+        Cambia(fO,cO,fD,cD,N);
+      }while(Perdiste(N)==true || Ganaste(N)==false);
     }
     break;
   }
-
-
-
 
 }
