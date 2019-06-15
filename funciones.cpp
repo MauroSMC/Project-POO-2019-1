@@ -1,3 +1,8 @@
+#include "UFunciones.h"
+
+void ImprimeMenu(){
+  cout << "Menú - Juego Senku\n" << "-------------------------------\n" << "1. Estilo Ingles\n"<<"2. Estilo Frances\n"<<"3. Estilo Asímetrico\n"<<"--------------------------\n"<<"0. Salir del programa\n\n"<<"Seleccionar opcion: ";}
+
 void Imprime1(char M[][8]){
   cout << " ";
   for (int i=1;i<8;i++){
@@ -58,6 +63,4 @@ bool Ganaste(char M[][8]){
   }
   else
     return false;}
-
-
 
