@@ -1,6 +1,6 @@
 #include <iostream>
 #include <iomanip>
-#include "UFunciones.h"
+#include "funciones.h"
 using namespace std;
 
 
