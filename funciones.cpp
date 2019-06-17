@@ -1,4 +1,4 @@
-#include "UFunciones.h"
+#include "funciones.h"
 
 void ImprimeMenu(){
   cout << "Menú - Juego Senku\n" << "-------------------------------\n" << "1. Estilo Ingles\n"<<"2. Estilo Frances\n"<<"3. Estilo Asímetrico\n"<<"--------------------------\n"<<"0. Salir del programa\n\n"<<"Seleccionar opcion: ";}
@@ -23,13 +23,13 @@ void Cambia(int FO,int CO, int FD, int CD,char M[][8]){
 
 bool Condicion1(int FO,int CO,char M[][8]){
   if(M[FO-1][CO-1]=='0'){
-    return true;
-    if(M[FO-1][CO+1]=='+'){
+    if((M[FO-1][CO+1]=='+')||(M[FO-1][CO-3]=='+')||(M[FO+1][CO-1]=='+')||(M[FO-3][CO-1]=='+')){
       return true;
+      }
+    else 
+      return false;
     }
   }
-  else 
-    return false;}
 bool Condicion2(int FD,int CD,char M[][8]){
   if(M[FD-1][CD-1]=='+')
     return true;
@@ -63,4 +63,3 @@ bool Ganaste(char M[][8]){
   }
   else
     return false;}
-
