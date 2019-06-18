@@ -37,17 +37,28 @@ bool Condicion2(int FD,int CD,char M[][8]){
         return false;}
 
 bool Perdiste(char M[][8]){
-    int cont=0;
+    int cont=0,cont2=0;
     for (int i=0;i<8;i++){
         for (int j=0;j<8;j++){
-            if(M[i][j]==0){
-                if(M[i][j-1]=='+'&& M[i][j+1]=='+' && M[i-1][j]=='+'&& M[i+1][j]=='+'){
-                    cont++;
+            if(M[i][j]=='0'){
+                if(M[i][j-1]=='+'|| M[i][j+1]=='+' || M[i-1][j]=='+'|| M[i+1][j]=='+'||M[i-1][j+1]==){
+                    cont2++;
                 }
             }
         }
     }
-    return true;}
+    for(int i=0;i<8;i++){
+        for(int j=0;j<8;j++) {
+            if (M[i][j] == '0') {
+                cont++;
+            }
+        }
+    }
+    if (cont==cont2){
+        return true;
+    }
+    else
+        return false;}
 
 bool Ganaste(char M[][8]){
     int cont=0;
